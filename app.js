@@ -5,7 +5,7 @@ const _= require('lodash');
 const mongoose= require("mongoose");
 require("dotenv").config();
 
-// const uri= process.env.N1_URI;
+const uri= process.env.N1_URI;
 const app= express();
 app.set("view engine", "ejs");
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 const connectDB= async()=>{
-    await mongoose.connect("mongodb+srv://admin-mukesh:S%40chin100@cluster0.1iafpek.mongodb.net/blogPost");
+    await mongoose.connect(uri);
 };
 
 const homeStartingPoint= ({title:"Home", content:"dolor sit amet consectetur adipisicing elit. Expedita itaque maiores voluptatum sed earum aut beatae necessitatibus, repudiandae, inventore cumque ratione fugit optio molestiae blanditiis ducimus cum quisquam voluptas velit iusto! Quae dolorum delectus doloremque. Beatae eligendi ratione dolores nostrum iure harum error tempore nemo officiis, illo inventore aspernatur non. Quasi molestiae quo aliquid voluptatibus illum eius, reiciendis et perspiciatis, officiis totam animi. Exercitationem, cumque, natus, nostrum vitae officia eius tempore optio fuga consectetur quaerat consequatur ullam ipsam totam repellendus cum veritatis? Nostrum aliquam omnis ea? Molestiae similique quas omnis, totam placeat illo excepturi rerum qui quae, dignissimos, alias enim"});
