@@ -5,7 +5,7 @@ const _= require('lodash');
 const mongoose= require("mongoose");
 require("dotenv").config();
 
-const uri= N1_URI;
+const uri= process.env.N1_URI;
 const app= express();
 app.set("view engine", "ejs");
 
